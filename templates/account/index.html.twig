@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{# {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('assets/js/account.js') }}"></script>
+{% endblock %} #}
+{% block title %}Hello AccountController!
+{% endblock %}
+
+{% block body %}
+	<div class="container" id="accountBox">
+		<div class="row">
+			<button type="button" class="btn btn-primary" id="themeBtn">Thèmes</button>					
+            <div class="themeBox">
+                <div class="darkTheme">Sombre (Default)</div>
+                <div class="lightTheme">De-light</div>
+                <div class="normalTheme">Class-ic</div>                  
+            </div>
+		</div>
+	</div>
+{% endblock %}

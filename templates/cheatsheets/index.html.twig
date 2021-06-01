@@ -1,0 +1,262 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cheatsheets - MCCS
+{% endblock %}
+
+{% block body %}
+	<div class="cover-container cheatsheets-interface">
+		<div class="row">
+			<div class="container col-8 cards-container">
+				<div class="row justify-content-around">
+					<h1 class="frontend-title text-center">Les langages Frontend</h1>
+					<br>
+					<hr>
+					<br>
+					<div class="card border-primary py-2 px-2" style="max-width: 20rem;">
+						<div class="card-header">
+							HyperText Markup Language
+						</div>
+						<img class="card-img-top" src="./assets/img/card-html.png" alt="HTML Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">.html</h5>
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos du
+									<strong>HTML</strong>
+									? Cette antisèche est faite pour vous !</p>
+								{% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_html') }}" role="button">Acceder au contenu</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+								<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+								<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %}
+							</div>
+					</div>
+ 
+					<div class="card border-warning py-2 px-2" style="max-width: 20rem;">
+						<div class="card-header">
+							Cascading Style Sheets
+						</div>
+						<img class="card-img-top" src="./assets/img/card-html.png" alt="CSS Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">.css</h5>
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos du
+									<strong>CSS</strong>
+										? Cette antisèche est faite pour vous !</p>
+								{# {% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_css') }}" role="button">Lire</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+								<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+								<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %} #}
+								<hr>
+								<a class="btn btn-warning btn-lg" id="espBtn" href="{{ path('cheatsheets_css') }}" role="button">Indisponible pour le moment</a>
+							</div>
+					</div>
+
+					<div class="card border-warning py-2 px-2" style="max-width: 20rem;">
+						<div class="card-header">JavaScript</div>
+						<img class="card-img-top" src="./assets/img/card-js.png" alt="JS/JQuery Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">.js</h5>
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos du
+									<strong>JS</strong>
+									? Cette antisèche est faite pour vous !</p>
+								{# {% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_js') }}" role="button">Lire</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+									<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+									<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %} #}
+								<hr>
+								<a class="btn btn-warning btn-lg" id="espBtn" href="{{ path('cheatsheets_js') }}" role="button">Indisponible pour le moment</a>
+							</div>
+					</div>						
+					<br>
+					<br>
+					{# LIGNE 2 #}
+					<div class="row justify-content-between">
+						<h1 class="backend-title text-center">Les langages backend</h1>
+						<br>
+						<hr>
+						<br>
+						<div class="card border-warning py-2 px-2" style="max-width: 20rem;">
+							<div class="card-header">
+								PHP: Hypertext Preprocessor
+							</div>
+							<img class="card-img-top" src="./assets/img/card-php.png" alt="PHP Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">.php</h5>
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos du
+									<strong>PHP</strong>
+									? Cette antisèche est faite pour vous !</p>
+								{# {% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_php') }}" role="button">Lire</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+								<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+								<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %} #}
+								<hr>
+								<a class="btn btn-warning btn-lg" id="espBtn" href="{{ path('cheatsheets_css') }}" role="button">Indisponible pour le moment</a>
+							</div>
+						</div>
+
+						<div class="card border-warning py-2 px-2" style="max-width: 20rem;">
+							<div class="card-header">
+								Simple Query Language
+							</div>
+							<img class="card-img-top" src="./assets/img/card-html.png" alt="CSS Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">.sql</h5>
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos du
+									<strong>SQL</strong>
+									? Cette antisèche est faite pour vous !</p>
+								{# {% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_html') }}" role="button">Lire</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+								<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+								<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %} #}
+								<hr>
+								<a class="btn btn-warning btn-lg" id="espBtn" href="{{ path('cheatsheets_css') }}" role="button">Indisponible pour le moment</a>
+							</div>
+						</div>
+						<br>
+						<hr>									
+					</div>
+					{# Ligne 3 #}
+					<div class="row justify-content-between">
+						<h1 class="backend-title text-center">Les frameworks et bibliothèques</h1>
+						<br>
+						<hr>
+						<br>
+						<div class="card border-warning py-2 px-2" style="max-width: 20rem;">
+							<div class="card-header">
+								Angular: Framework JavaScript
+							</div>
+							<img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/langfr-1024px-Angular_full_color_logo.svg.png" alt="PHP Card image cap">
+							<div class="card-body">
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos d'
+									<strong>Angular</strong>
+									? Cette antisèche est faite pour vous !</p>
+								{# {% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_php') }}" role="button">Lire</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+								<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+								<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %} #}
+								<hr>
+								<a class="btn btn-warning btn-lg" id="espBtn" href="{{ path('cheatsheets_css') }}" role="button">Indisponible pour le moment</a>
+							</div>
+						</div>
+
+						<div class="card border-warning py-2 px-2" style="max-width: 20rem;">
+							<div class="card-header">
+								Symfony: Framework
+							</div>
+							<img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Symfony.jpg" alt="CSS Card image cap">
+							<div class="card-body">
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos de
+									<strong>Symfony</strong>
+									? Cette antisèche est faite pour vous !</p>
+								{# {% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_html') }}" role="button">Lire</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+								<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+								<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %} #}
+								<hr>
+								<a class="btn btn-warning btn-lg" id="espBtn" href="{{ path('cheatsheets_css') }}" role="button">Indisponible pour le moment</a>
+							</div>
+						</div>
+
+						<div class="card border-warning py-2 px-2" style="max-width: 20rem;">
+							<div class="card-header">
+								Ionic: Framework d'appli web hybride
+							</div>
+							<img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/LogoIonic.png" alt="CSS Card image cap">
+							<div class="card-body">
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos de 
+									<strong>Ionic</strong>
+									? Cette antisèche est faite pour vous !</p>
+								{# {% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_html') }}" role="button">Lire</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+								<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+								<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %} #}
+								<hr>
+								<a class="btn btn-warning btn-lg" id="espBtn" href="{{ path('cheatsheets_css') }}" role="button">Indisponible pour le moment</a>
+							</div>
+						</div>
+						
+						<div class="card border-warning py-2 px-2" style="max-width: 20rem;">
+							<div class="card-header">
+								JQuery: Bibliothèque JavaScript
+							</div>
+							<img class="card-img-top" src="./assets/img/card-js.png" alt="CSS Card image cap">
+							<div class="card-body">
+								<p class="card-text">Besoin de vous rafraîchir la mémoire à propos de 
+									<strong>JQuery</strong>
+									? Cette antisèche est faite pour vous !</p>
+								{# {% if app.user %}
+								<hr>
+								<a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cheatsheets_html') }}" role="button">Lire</a>
+								{% else %}
+								<hr>
+								<p class="text-muted">Vous devez vous
+								<a href="{{ path('app_login') }}">connecter</a>
+									ou vous
+								<a href="{{ path('app_register') }}">enregistrer</a>
+									pour lire le contenu.
+								{% endif %} #}
+								<hr>
+								<a class="btn btn-warning btn-lg" id="espBtn" href="{{ path('cheatsheets_css') }}" role="button">Indisponible pour le moment</a>
+							</div>
+						</div>
+						<br>
+						<hr>									
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+{% endblock %}

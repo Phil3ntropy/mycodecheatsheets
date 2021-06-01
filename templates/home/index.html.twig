@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}myCodeCheatSHeets(){% endblock %}
+
+{% block body %}
+<main>
+    <div class="cover-container">
+        <div class="row">
+            <div class="justify-content-center" id="jumbo">
+                <h1 class='display-4 text-center'>Hello world!</h1>
+                <h5 class="lead text-center">Bienvenue sur myCodeCheatSheets();</h5>
+                <hr class="my-4">
+                <p class="lead text-center">Le site qui met à votre disposition des antisèches
+                    sur différents langages web et framework et vous donne la possibilité de créer les vôtres...</p>
+                <p class="lead text-center">Créez un compte gratuit dès maintenant ou connectez-vous pour profiter de nos services inutiles
+                    mais indispensables. </p> 
+                <hr class="my-4">
+                <p class="lead text-center">
+                    <a class="btn btn-primary btn-lg" id="espBtn" href="{{ path('cs') }}" role="button">Voir les cheatsheets</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

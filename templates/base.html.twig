@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle`
+												           and uncomment the following Encore helpers to start using Symfony UX #}
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://bootswatch.com/5/cyborg/bootstrap.min.css">
+			<link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+		{% endblock %}
+		{% block javascripts %}
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/9e2ad672e9.js" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="{{ asset('assets/js/index.js') }}"></script>
+		<script src="{{ asset('assets/js/account.js') }}"></script>
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<div class="container-fluid py-2 px-2 d-flex justify-content-around">
+					<a class="navbar-brand" href="{{ path('home') }}">
+						<img src="{{ asset('assets/img/mccs_logo.png') }}" alt="">
+					</a>
+					
+					<ul class="navbar-nav nav-pills">
+						<li class="nav-item" id="navli-1">
+							<a class="nav-link" href="{{ path('home') }}">
+							
+							<i class="fas fa-home"></i>
+							Accueil</a>
+						</li>
+						{% if not app.user %}
+							<li class="nav-item" id="navli-2">
+								<a class="nav-link" href="{{ path('app_login') }}">
+								<i class="fas fa-sign-in-alt"></i>
+								Se connecter</a>
+							</li>
+							<li class="nav-item" id="navli-3">
+								<a class="nav-link" href="{{ path('app_register') }}">
+								<i class="fas fa-user-plus"></i>
+								S'enregistrer</a>
+							</li>
+						{% else %}
+							<li class="nav-item" id="navli-4">
+								<a class="nav-link" href="{{ path('cs') }}">
+								<i class="far fa-sticky-note"> </i>
+								Cheat sheets</a>
+							</li>
+							<li class="nav-item" id="navli-5">
+								<a class="nav-link" href="{{ path('custom_cs') }}">
+								<i class="far fa-edit"></i>
+								Mes Cheat sheets</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav nav-pills" id="navli">
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('account') }}">
+								<i class="far fa-user"> </i>
+									{{ app.user.pseudo }}</a>
+							</li>
+							<li class="nav-item" id="navli">
+								<a class="nav-link" href="{{ path('app_logout') }}">
+								<i class="fas fa-sign-out-alt"></i>
+								Se déconnecter</a>
+							</li>
+						{% endif %}
+					</ul>
+				
+				</div>
+			</nav>
+		</header>
+		{% block body %}{% endblock %}
+		<footer class="footer my-auto">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 mccs-footer text-center">
+					<p>&copy; 2021 Maxence Buisson for
+						<a href="http://philentropy.org">Philentropy</a>
+						-
+						<a href="https://mccs.philentropy.org">myCodeCheatSheets();</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		</footer>
+	</body>
+</html>
